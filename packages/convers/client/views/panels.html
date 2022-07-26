@@ -1,0 +1,117 @@
+
+<template name="panelProfile_conver">
+	<a class="list-group-item" href="{{pathFor route='messages'}}">
+		<i class="icon icon-mes"></i>
+		 {{i18n 'btn_messages'}} 
+		<span class="badge">{{convers.length}}</span>
+	</a>
+</template>
+
+<template name="panelConver">
+
+	<div id="conver" class="panel">
+		<div class="panel-heading bg-primary">
+			<h4 class="pull-left">
+				<a class="back" href="{{routeBack}}">
+					<i class="icon icon-arrow-l"></i>
+				</a> 
+				{{{title}}}
+			</h4>
+			<a class="close pull-right" href="/map">
+				<i class="icon icon-close"></i>
+			</a>
+		</div>
+		<div class="panel-body list-group list-items">
+		
+			<!-- TODO header conver, createdAt ecc -->
+
+			{{> converMsgs}}
+
+		</div>
+		<div class="panel-footer">
+		
+			{{> converInput}}
+		
+		</div>		
+	</div>
+
+</template>
+
+<template name="converMsgs">
+	{{#each msgsLast}}
+		{{> itemMsg}}
+	{{/each}}
+</template>
+
+<template name="converInput">
+	{{#if currentUser}}
+		<div id="converInput" class="row">
+			<div class="col-xs-1 text-center">
+				<i class="icon icon-mes"></i>
+			</div>		
+			<div class="col-xs-11">
+				<textarea class="pull-left" rows="1" placeholder="{{i18n 'label_msgnew'}}"  maxlength="300" aria-expanded="true" aria-label="{{i18n 'label_msgnew'}}"></textarea>
+			</div>	
+		</div>
+	{{else}}
+		<div class="text-center text-muted">{{i18n 'label_nologinconver'}}</div>
+	{{/if}}
+</template>
+
+<template name="conver_place_new">
+	{{#if currentUser}}
+	<form class="form-horizontal item_conver-new" role="form">
+		<div class="input-group">
+			<input class="form-control conver-title-new" tyte="text" maxlength="60" placeholder="{{i18n 'label_convertit'}}" aria-label="{{i18n 'label_convertit'}}" aria-expanded="true" />
+			<span class="input-group-btn">
+				<a class="btn btn-default conver-btn-new">
+					<i class="icon icon-add"></i>
+					{{i18n 'btn_convernew'}}
+				</a>
+			</span>
+		</div>
+	</form>
+	{{else}}
+		<div class="text-center text-muted">{{i18n 'label_nologinconver'}}</div>
+	{{/if}}
+</template>
+
+<template name="itemPlace_conver">
+	<a class="btn btn-sm btn-default place-btn-mes" href="/place/{{id}}/convers">
+		<i class="icon {{#if conversCount}} icon-mes {{else}} icon-unmes {{/if}}"></i>
+		<span class="badge {{#unless conversCount}} bg-gray {{/unless}}">{{conversCount}}</span>
+	</a>
+</template>
+
+<template name="itemUser_conver">
+	<a class="btn btn-sm btn-default" href="/user/{{id}}/conver">
+		<i class="icon icon-mes"></i> <span>{{i18n 'btn_conversend'}}</span>
+	</a>
+</template>
+
+<template name="tabUser_conver">
+	<ul class="list-group">
+		<li class="list-group-item active">		
+			<span>{{i18n 'title_convers'}}</span>
+		</li>
+
+		{{#if conversList}}
+			{{#if conversList.length}}
+				{{#each getConversList}}
+				<li class="list-group-item">
+					{{> item_conver}}
+				</li>
+				{{/each}}
+			{{else}}
+			<li class="list-group-item">
+				<label class="text-gray"><i>{{i18n 'label_noconvers'}}</i></label>
+			</li>
+			{{/if}}
+		{{else}}
+			<a class="list-group-item panel-btn-conversList" href="#">
+				<i class="icon icon-mes"></i> {{i18n 'title_convers'}}
+			</a>
+		{{/if}}
+	
+	</ul>
+</template>

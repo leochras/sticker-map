@@ -1,0 +1,278 @@
+.icon,
+.marker-cluster,
+.marker-active,
+.marker-place,
+.marker-user,
+.marker-none,
+.marker-anim,
+.marker-cursor,
+.leaflet-marker-icon,
+.leaflet-bar a.leaflet-control-zoom-in,
+.leaflet-touch .leaflet-bar a.leaflet-control-zoom-in,
+.leaflet-bar a.leaflet-control-zoom-out,
+.leaflet-touch .leaflet-bar a.leaflet-control-zoom-out,
+.leaflet-control-gps .gps-button,
+.leaflet-control-gps .gps-button:hover,
+.leaflet-control-gps .gps-button.active,
+.leaflet-control-gps .gps-button.active:hover,
+.leaflet-control-gps .gps-button.disabled,
+.leaflet-control-gps .gps-button.disabled:hover {
+	background: url("/packages/keplerjs_theme/assets/images/sprite.svg") no-repeat;
+}
+.icon.icon-loader {
+	background: url("/packages/keplerjs_theme/assets/images/loader-icon.gif") no-repeat;
+}
+/* CONTROLS */
+.leaflet-control-gps .gps-button.loading,
+.leaflet-control-gps .gps-button.loading:hover {
+	background: url("/packages/keplerjs_theme/assets/images/loader-default.gif") center center no-repeat;
+}
+.leaflet-control-gps .gps-button,
+.leaflet-control-gps .gps-button:hover {
+	background-position: 0 -90px;
+}
+.leaflet-control-gps .gps-button.disabled,
+.leaflet-control-gps .gps-button.disabled:hover {
+	background-position: 0 -60px;
+}
+.leaflet-control-gps .gps-button.active,
+.leaflet-control-gps .gps-button.active:hover {
+	background-position: 0 -120px;
+}
+.leaflet-bar a.leaflet-control-zoom-in,
+.leaflet-touch .leaflet-bar a.leaflet-control-zoom-in {
+	background-position: 0 -150px;
+}
+.leaflet-bar a.leaflet-control-zoom-out,
+.leaflet-touch .leaflet-bar a.leaflet-control-zoom-out {
+	background-position: 0 -180px;
+}
+
+.icon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	line-height: 1;
+	/* come .glyphicon */
+	vertical-align: text-bottom;/*non modificare!*/
+	height: 18px;
+	width: 18px;
+}
+.icon-avatar {
+	display: inline-block;
+    background-size: cover;
+	height: 30px;
+	width: 30px;
+	border-radius: 3px;
+}
+.icon-avatar-default {
+	background-image: url("/packages/keplerjs_theme/assets/images/avatar.svg");
+}
+.avatar-big .icon-avatar {
+	height: 90px;
+	width: 90px;
+}
+
+.icon-avatar:not([src]) {
+    content: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+}
+
+div.icon-marker,
+div.leaflet-marker-icon,
+.marker-cluster,
+.marker-active,
+.marker-place,
+.marker-user,
+.marker-none {
+	display: inline-block;
+	width:27px;
+	height:30px;
+}
+.marker-cluster {
+	width:30px;
+}
+.marker-cursor {
+	background-position: -30px -180px;
+	height: 30px;
+	width: 30px;
+}
+.marker-poi .icon {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+}
+
+/* MARKER ARROWS */
+.marker-anim {
+	background-position: -233px 0;
+}
+
+/* MARKER */
+.marker-cluster{ background-position: -30px 0;      } 
+.marker-active { background-position: -30px -30px;  } 
+.marker-place  { background-position: -30px -60px;  } 
+.marker-none   { background-position: -30px -90px;  } 
+.marker-active { background-position: -30px -120px; } 
+/* MARKERS UTILS */
+.marker-gray   { background-position: -30px -150px; }
+.marker-cursor,
+.marker-orange { background-position: -30px -180px; }
+.marker-red    { background-position: -30px -210px; }
+.marker-blue   { background-position: -30px -240px; }
+.marker-green  { background-position: -30px -270px; }
+
+/* MARKER USERS */
+.marker-profile{ background-position: -30px -300px; } 
+.marker-friend { background-position: -30px -330px; } 
+.marker-user   { background-position: -30px -330px; } 
+
+/* MARKER POIS */
+.marker-geojson{ background-position: -30px -150px; }
+
+/* ICON UI */
+.icon-profile{ background-position: 0 -270px; } 
+.icon-friends{ background-position: 0 -300px; }
+
+.icon-status-connected{ background-position: 0 -210px;  } 
+.icon-status-failed,
+.icon-status-offline,
+.icon-status-waiting,
+.icon-status-connecting,
+.icon-status-disconnect{ background-position: 0 -240px;  } 
+
+/* ICON POIS */
+.icon-parking{ background-position: -60px 0; } 
+.icon-water  { background-position: -60px -30px; }
+.icon-drink  { background-position: -60px -60px; }
+.icon-eat    { background-position: -60px -90px; }
+.icon-bed    { background-position: -60px -120px; }
+.icon-camp   { background-position: -60px -150px; }
+.icon-bus    { background-position: -60px -180px; }
+.icon-market { background-position: -60px -210px; }
+
+/* ICON */
+.icon-search{ background-position: -90px 0;  } 
+.icon-canc  { background-position: -90px -30px; } 
+.icon-add   { background-position: -90px -60px; }
+.icon-del   { background-position: -90px -90px; }
+.icon-refresh { background-position: -90px -120px; } 
+.icon-nav   { background-position: -90px -150px; } 
+.icon-stview{ background-position: -90px -180px; } 
+.icon-map   { background-position: -90px -210px; }
+.icon-places{ background-position: -90px -240px; } 
+.icon-pois  { background-position: -90px -270px; } 
+.icon-home  { background-position: -90px -300px; }
+.icon-sets  { background-position: -90px -330px; } 
+.icon-logout{ background-position: -90px -360px; } 
+.icon-danger{ background-position: -90px -390px; } 
+.icon-info  { background-position: -90px -420px; } 
+.icon-success { background-position: -90px -450px; }
+.icon-warning { background-position: -90px -480px; } 
+
+.icon-arrow-r-blue { background-position: -90px -510px; } 
+.icon-arrow-l-blue { background-position: -90px -540px; }
+.icon-close-blue { background-position: -90px -570px; } 
+
+.icon-play { background-position: -90px -600px; } 
+.icon-stop { background-position: -90px -630px; } 
+.icon-share { background-position: -90px -660px; } 
+
+.icon-arrow-r { background-position: -60px -510px; } 
+.icon-arrow-l { background-position: -60px -540px; } 
+.icon-close { background-position: -60px -570px; } 
+
+/* user status */
+.icon-online { background-position: -120px 0;  } 
+.icon-offline { background-position: -150px 0;  }
+.icon-away { background-position: -120px -30px; }
+.icon-mob,
+.icon-mob-online { background-position: -120px -60px;  } 
+.icon-mob-offline { background-position: -150px -60px;  }
+.icon-mob-away { background-position: -150px -30px; }
+
+.icon-notif{ background-position: -120px -90px;  }
+.icon-unnotif{ background-position: -150px -90px;  }  
+.icon-star{ background-position: -120px -120px;  } 
+.icon-unstar{ background-position: -150px -120px;  } 
+.icon-mes{ background-position: -120px -150px;  } 
+.icon-unmes{ background-position: -150px -150px;  } 
+.icon-users{ background-position: -120px -180px;  } 
+.icon-unusers{ background-position: -150px -180px;  } 
+.icon-checkin{ background-position: -120px -210px;  } 
+.icon-uncheckin{ background-position: -150px -210px;  }
+.icon-geometry{ background-position: -150px -240px;  }
+.icon-checkout{ background-position: -120px -240px;  }
+.icon-useradd{ background-position: -120px -270px;  } 
+.icon-userdel{ background-position: -120px -300px;  }
+.icon-userpend{ background-position: -120px -330px;  }
+
+.icon-admin{ background-position: -150px -330px;  }
+.icon-import{ background-position: -150px -360px;  }
+.icon-export{ background-position: -150px -390px;  }
+.icon-cats{ background-position: -150px -420px;  }
+.icon-route{ background-position: -150px -450px;  }
+.icon-url{ background-position: -150px -480px;  }
+.icon-code{ background-position: -150px -510px;  }
+
+.icon-userbid{ background-position: -120px -330px;  } 
+.icon-info{ background-position: -120px -360px;  } 
+.icon-hist{ background-position: -120px -390px;  } 
+.icon-cal{ background-position: -120px -420px;  } 
+.icon-weather{ background-position: -120px -450px;  }
+.icon-photos{ background-position: -120px -480px;  }
+.icon-report{ background-position: -120px -510px;  }
+.icon-edit{ background-position: -120px -540px;  }
+
+.icon-like{ background-position: -120px -570px;  } 
+.icon-unlike{ background-position: -150px -570px;  } 
+.icon-gps{ background-position: -120px -600px;  } 
+
+
+/* ICON GEO */
+.icon-geo{ background-position: -180px 0;  } 
+.icon-ele{ background-position: -180px -30px;  } 
+.icon-esp{ background-position: -180px -60px;  } 
+.icon-sun{ background-position: -180px -90px;  } 
+
+
+/* ICON TRACK */
+.icon-gpx{ background-position: -180px -120px;  } 
+.icon-dis{ background-position: -180px -150px;  } 
+.icon-sal{ background-position: -180px -180px;  }
+.icon-len{ background-position: -180px -210px;  } 
+.icon-time{ background-position: -180px -240px; } 
+
+.icon-fb{ background-position: -180px -270px; } 
+.icon-osm{ background-position: -180px -300px; } 
+.icon-gmap{ background-position: -180px -330px; } 
+
+.icon-kepler{ background-position: -150px -270px; } 
+.icon-website { background-position: -150px -270px; } 
+.icon-goo { background-position: -150px -300px; } 
+
+.icon-git { background-position: -180px -360px; } 
+.icon-twit{ background-position: -180px -390px; } 
+.icon-face{ background-position: -180px -420px; } 
+.icon-medi{ background-position: -180px -450px; } 
+.icon-inst{ background-position:-180px -480px; } 
+.icon-mail{ background-position: -180px -510px; } 
+.icon-news{ background-position: -180px -540px; } 
+.icon-dock{ background-position: -180px -570px; } 
+.icon-help{ background-position: -180px -600px; } 
+
+.icon-lang-it{ background-position: -210px 0;      } 
+.icon-lang-fr{ background-position: -210px -30px;  }
+.icon-lang-de{ background-position: -210px -60px;  } 
+.icon-lang-en{ background-position: -210px -90px;  } 
+.icon-lang-es{ background-position: -210px -120px; } 
+.icon-lang-sv{ background-position: -210px -150px; } 
+.icon-lang-ru{ background-position: -210px -180px; } 
+
+.icon-social-tw {       background-position:0 0;     }
+.icon-social-tw:hover { background-position:0 -31px; }
+.icon-social-fb {       background-position:-30px 0; }
+.icon-social-fb:hover { background-position:-30px -31px;}
+.icon-social-gp {       background-position:-60px 0;}
+.icon-social-gp:hover { background-position:-60px -31px;}
+.icon-social-tu {       background-position:-90px 0;}
+.icon-social-tu:hover { background-position:-90px -31px;}

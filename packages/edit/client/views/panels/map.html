@@ -1,0 +1,21 @@
+
+<template name="panelPlaceEdit_edit_map">
+	<div class="row">
+		<div class="col-xs-12">
+			<label class="control-label"><i class="icon icon-geometry"></i> {{i18n 'label_location'}} / {{i18n 'label_geometry'}}</label>
+			<div class="input-group">
+				<input class="input-editloc form-control" type="text" readonly="readonly" value="{{humanLoc loc}}" />
+				<span class="input-group-btn">
+					<a class="btn btn-default btn-editsave hidden">{{i18n 'btn_save'}}</a>
+				  	<a class="btn btn-default btn-editcanc hidden">{{i18n 'btn_reset'}}</a>
+					<a class="btn btn-default btn-edit" data-toggle="collapse" data-target="#editMap" aria-expanded="false" aria-controls="editMap" href="#">
+						<i class="icon icon-edit"></i>
+					</a>				  	
+				</span>
+			</div>
+			<div class="collapse" id="editMap">
+			  <div class="map"></div>
+			</div>
+		</div>
+	</div>	
+</template>

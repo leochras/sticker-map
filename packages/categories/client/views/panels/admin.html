@@ -1,0 +1,59 @@
+
+<template name="panelAdmin_cats">
+	<a class="list-group-item" href="/admin/categories">
+		<i class="icon icon-cats"></i>
+		{{i18n 'title_panelAdminCatsType'}}
+	</a>
+</template>
+
+<template name="itemAdminCat">
+	<div class="cat-item">
+		<div class="pull-left">
+			<a class="label label-primary" href="/{{type}}s/cat/{{name}}">
+				{{name}}
+			</a>
+		</div>
+		<div class="pull-right">
+			<span class="badge">{{rank}}</span>
+			<!-- <i class="text-muted">{{type}}</i> -->
+			<a class="btn-catdel btn btn-sm btn-default" href="#" data-confirm-msg="{{i18n 'btn_del'}}">
+				<i class="icon icon-del"></i>  {{i18n 'btn_del'}}
+			</a>	
+		</div>
+	</div>
+</template>
+
+<template name="formSearchCats">
+	<div class="row form-group">
+		<div class="col-xs-4 has-feedback">
+			<input class="cats-search form-control" type="text" placeholder="{{i18n 'label_find'}}" /> 
+			<span class="search-canc form-control-feedback" aria-hidden="true"><i class="icon icon-canc"></i></span>
+		</div>
+		<div class="col-xs-8">
+			<form class="form-horizontal" role="form">
+				<div class="input-group">
+					<input class="form-control cat-name-new" tyte="text" size="25" maxlength="25" placeholder="{{i18n 'label_name'}}" aria-expanded="true" />
+					<span class="input-group-btn">
+						<a class="btn btn-default cat-btn-new">
+							<i class="icon icon-add"></i>
+							{{i18n 'btn_addnew'}}
+						</a>
+					</span>		
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<ul class="nav nav-tabs text-right">
+		<li class="{{#if eq typeCat 'place'}}active{{/if}}">
+			<a href="{{pathFor route='panelAdminCatsType' type='place'}}">
+				<span>{{i18n 'btn_places'}}</span>
+			</a>
+		</li>
+		<li class="{{#if eq typeCat 'user'}}active{{/if}}">
+			<a href="{{pathFor route='panelAdminCatsType' type='user'}}">
+				<span>{{i18n 'btn_users'}}</span>
+			</a>
+		</li>
+	</ul>
+</template>

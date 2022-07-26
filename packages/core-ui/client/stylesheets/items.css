@@ -1,0 +1,80 @@
+
+.item-place,
+.friend-item {
+	white-space: nowrap;
+	width: 100%;
+	display: inline-block;
+}
+
+.item-place a:hover {
+	text-decoration: none;
+}
+.user-btn-avatar,
+.user-btn-name,
+.place-btn-name {
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;	
+	line-height: 30px;
+	text-align: left;
+	/*display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;*/
+}
+.user-btn-name u {
+	text-decoration: none;
+	margin-left: 2px;
+}
+/* item place */
+.place-btn-mes .badge:not(.bg-gray) {
+	color:#fff;
+	background-color:#8BCEDF;
+}
+.popup-btn-star .badge:not(.bg-gray),
+.place-btn-star .badge:not(.bg-gray) {
+	color:#fff;
+	background-color:#FCD865;
+}
+
+.friend-item.offline .icon-avatar {
+	opacity: 0.6;
+}
+.friend-item.offline .btn {
+	color: #888;
+}
+.friend-item .place-btn-name {
+	font-size: 12px;
+}
+.friend-item .btn {
+	border: none;
+}
+.friend-item .user-status-text {
+	display: none;
+}
+
+.friends-search:active + .icon-search {
+	display: none;
+}
+
+.place-btn-star.btn-default.active,
+.place-btn-checkin.btn-default.active {
+	background-color: none;
+	box-shadow: none;
+}
+
+.place-btn-checkin {
+	padding: 5px;
+}
+.place-btn-checkin span {
+	/*letter-spacing: -1px;*/
+	font-size: 11px;
+}
+.list-group > .list-group-item {
+	overflow: hidden;
+}
+
+time {
+	color:#aaa;
+	font-size: 12px;
+}

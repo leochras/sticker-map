@@ -1,0 +1,21 @@
+header.navbar {
+	padding: 4px;	
+	height: 40px;	
+	min-height: 40px;
+}
+header .container-fluid {
+	padding: 0;
+}
+header .breadcrumb {
+	background: #428bca;
+	border:1px solid #529bda;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 5px;
+	margin: 0;
+}
+
+header .breadcrumb a,
+header .breadcrumb li {
+	color: #fff;
+}

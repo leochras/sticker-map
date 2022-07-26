@@ -1,0 +1,61 @@
+
+<template name="layoutFull">
+	<div class="container-fluid">
+	    {{> yield}}
+	</div>
+</template>
+
+<template name="layoutPage">
+	
+	{{> layoutPageHeader}}
+
+	<div class="container-fluid">
+		{{> yield}}
+	</div>
+	
+	{{> footer}}
+
+</template>
+
+<template name="layoutMap">
+	<div class="container-full">
+
+		<div id="map" class="sidebar-map"></div>
+
+		<div id="sidebar" class="sidebar {{#if showSidebar}} expanded {{/if}}">
+			
+			{{> navSidebar}}
+
+			<div class="tab-content">
+				<div class="tab-pane fade in active" role="tabpanel">
+
+				{{> yield}}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="layoutPageHeader">
+	<header class="navbar navbar-default navbar-fixed-top bg-primary">		
+		<div class="container-fluid">
+			<h4 class="pull-left">
+				<a class="back" href="{{routeBack}}">
+					<i class="icon icon-arrow-l"></i>
+				</a> 
+				{{routeTitle}}
+			</h4>
+			{{#if 1}}
+			<a class="close pull-right" href="{{routeBack}}">
+				<i class="icon icon-close"></i>
+			</a>
+			{{/if}}
+		</div>
+	</header>
+</template>
+
+<template name="empty">
+</template>
+

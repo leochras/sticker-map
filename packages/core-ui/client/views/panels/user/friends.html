@@ -1,0 +1,37 @@
+
+<template name="tabUser_ui_friends">
+	{{#if friendsCommon}}
+		<label>{{i18n 'label_friendscomm'}}</label>
+		<ul class="list-group list-items">
+			{{#each friendsCommon}}
+			{{#if userById this}}
+			<li class="list-group-item">
+				{{#with userById this}}
+					{{> item_user}}
+				{{/with}}
+			</li>
+			{{/if}}
+			{{/each}}
+		</ul>
+	{{else}}
+		<label class="text-gray"><i>{{i18n 'label_notfound'}}</i></label>
+	{{/if}}
+
+	{{#if isFriend}}
+		{{#if friendsOther}}
+		<br>
+		<label>{{i18n 'label_friendsother'}}</label>
+		<ul class="list-group list-items">
+			{{#each friendsOther}}
+			{{#if userById this}}
+			<li class="list-group-item">
+				{{#with userById this}}
+					{{> item_user}}
+				{{/with}}
+			</li>
+			{{/if}}
+			{{/each}}
+		</ul>
+		{{/if}}
+	{{/if}}
+</template>

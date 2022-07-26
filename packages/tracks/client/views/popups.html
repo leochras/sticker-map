@@ -1,0 +1,24 @@
+
+<template name="popupPlace_tracks">
+	{{#if isOutdoor}}
+		<a class="btn btn-sm btn-default" href="/place/{{id}}/tracks" title="{{i18n 'btn_tracks'}}">
+			<i class="icon icon-gpx"></i>
+		</a>
+	{{/if}}
+</template>
+
+<template name="popupTrack">
+	{{#if time}}<label><i class="icon icon-time"></i> {{i18n 'label_time'}} </label> {{humanTime time}}    <br>{{/if}}
+	{{#if len}}<label><i class="icon icon-len"></i> {{i18n 'label_len'}} </label>    {{humanDistance len}} <br>{{/if}}
+	{{#if dis}}<label><i class="icon icon-dis"></i> {{i18n 'label_dis'}} </label>    {{humanDistance dis}} <br>{{/if}}
+</template>
+
+<template name="popupGeojson_tracks">
+	{{#with properties}}
+		<div class="list-group-item">
+		
+		{{> popupTrack}}
+
+		</div>
+	{{/with}}
+</template>

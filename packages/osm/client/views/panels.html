@@ -1,0 +1,21 @@
+
+<template name="tabPlace_osm">
+{{#if osm.properties}}
+	<div class="list-group">
+		<div class="list-group-item active">
+			{{i18n 'title_placeOsm'}}
+		</div>
+		<div class="list-group-item">
+			{{#with osm}}
+				{{> popupOsm}}
+			{{/with}}
+			<a class="btn btn-default clearfix pull-right" target="_blank" href="{{osmEditUrlById osm.id}}">
+				<i class="icon icon-osm"></i> {{i18n 'btn_osmedit'}}
+			</a>
+		</div>
+		<div style="font-size:10px" class="text-muted text-right">
+			provided by <a href="http://www.osm.org/" target="_blank">openstreetmap.org</a>
+		</div>
+	</div>
+{{/if}}
+</template>	

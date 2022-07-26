@@ -1,0 +1,26 @@
+<template name="panelSettings">
+	<div id="settings" class="panel">
+
+		<div class="panel-heading bg-primary">
+			<h4 class="pull-left">
+				<a class="back" href="{{routeBack}}">
+					<i class="icon icon-arrow-l"></i>
+				</a> 
+				{{i18n 'title_settings'}}
+			</h4>
+			<a class="close pull-right" href="/map">
+				<i class="icon icon-close"></i>
+			</a>
+		</div>
+		<div class="panel-body">
+			
+			<form class="form-horizontal" role="form">
+
+				{{> pluginsTemplate name='panelSettings' sep='<hr />'}}
+	
+			</form>
+
+		</div>
+	</div>
+</template>
+

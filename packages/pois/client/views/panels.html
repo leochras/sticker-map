@@ -1,0 +1,32 @@
+
+<template name="tabPlace_pois">
+
+	<div class="list-group">
+		<div class="list-group-item active">
+			{{i18n 'title_placePois'}}
+		</div>
+
+		{{#if poisList}}
+			<div class="list-group-item">
+			
+			{{> tabPlace_pois_list}}
+
+			</div>
+		{{else}}
+			<a class="list-group-item panel-btn-poisList" href="#">
+				<i class="icon icon-pois"></i> {{i18n 'btn_pois'}}
+			</a>
+		{{/if}}
+	</div>
+
+</template>
+
+<template name="tabPlace_pois_list">
+	{{#each getPoisList}}
+	<a class="list-group-item panel-btn-poi" href="/place/{{placeId}}/pois/{{type}}">
+		<i class="icon icon-{{type}}"></i>
+		{{title}}
+		<span class="badge bg-gray">{{count}}</span>
+	</a>
+	{{/each}}
+</template>

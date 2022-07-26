@@ -1,0 +1,45 @@
+{
+  "name": "keplerjs",
+  "version": "1.7.0",
+  "description": "The open source full-stack geosocial network platform",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Keplerjs/Kepler.git"
+  },
+  "scripts": {
+    "start": "meteor",
+    "check_versions": "packagecheck",
+    "publish_packages": "cd private && ./publish_packages.sh"
+  },
+  "keywords": [
+    "social-network",
+    "social",
+    "osm",
+    "overpass",
+    "geosocial",
+    "platform",
+    "leaflet",
+    "mapping"
+  ],
+  "author": {
+    "name": "Stefano Cudini",
+    "email": "stefano.cudini@gmail.com",
+    "url": "https://opengeo.tech/"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/Keplerjs/Kepler/issues"
+  },
+  "homepage": "https://keplerjs.io",
+  "dependencies": {
+    "@babel/runtime": "^7.4.3",
+    "bcrypt": "^5.0.0",
+    "core-js": "^2.5.4",
+    "fibers": "^3.1.1",
+    "meteor-node-stubs": "^0.4.1",
+    "simple-statistics": "^5.3.1"
+  },
+  "devDependencies": {
+    "packagecheck": "^0.2.1"
+  }
+}

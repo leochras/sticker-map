@@ -1,0 +1,50 @@
+#placeEdit .panel-heading {
+	background: #f90;
+	color: #fff;
+}
+#placeEdit .panel-heading a {
+	color: #fff
+}
+#placeEdit .back {
+	background-color: rgba(255,255,255,0.6)
+}
+.editcreation .icon-avatar {
+	height: 18px;
+	width: 18px;
+}
+.input-desc {
+	font-size: 14px;
+	max-height: 100px;
+	overflow-y: auto;
+	resize: none;
+}
+
+/*.edits .list-items .place-btn.name {
+	text-overflow: ellipsis;
+}*/
+
+#editMap .map {
+	position: relative;
+	height: 320px;
+	width: auto;
+	cursor: move;
+	/*background-color: #ccc*/;
+	margin: 2px 1px;
+	border-radius: 4px;
+	border:1px solid #ccc;
+}
+#editMap .leaflet-control {
+	padding: 2px;
+}
+#editMap .leaflet-draw .leaflet-bar,
+#editMap .leaflet-control-zoom .leaflet-bar {
+	padding: 2px;
+	border: none;
+	padding: 0;
+}
+#editMap .leaflet-editing-icon {
+	background: #fff
+}
+#editMap .leaflet-draw-toolbar a {
+	padding: 0
+}

@@ -1,0 +1,14 @@
+
+.inputFile_upload .input-group-btn {
+	visibility: hidden;
+}
+.inputFile_upload.selected .input-group-btn {
+	visibility: visible;
+}
+.inputFile_upload.loading-bar * {
+	visibility: hidden;
+}
+
+/*.inputFile_upload.loading-bar > .btn-upload-canc {
+	display: block;
+}*/

@@ -1,0 +1,45 @@
+
+/* MARKER ICON ANIMATION */
+
+.marker-anim {
+	display: none;
+	position: absolute;
+	height: 30px;
+	width: 70px;
+	left: -22px;
+	bottom: -15px;
+	transition: all .4s ease-out;
+}
+.marker-anim.animated {
+	display: block;
+	transition: all .4s ease-in;
+	transform: scale(1.45);
+}
+.marker-cluster .marker-anim {
+	display: none;
+}
+.marker-cluster {
+	text-align: center;
+	padding-top: 50%;
+	border-radius: 0;
+}
+.marker-cluster .badge-cluster {
+	display: inline-block;
+	margin-top: -64%;
+}
+.marker-place .badge-checkins,
+.marker-cluster .badge-checkins {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	z-index: 1000;
+}
+.leaflet-marker-icon {
+	border: none
+}
+
+.leaflet-marker-icon .icon {
+	position: absolute;
+	top: 4px;
+	left: 7px;
+}

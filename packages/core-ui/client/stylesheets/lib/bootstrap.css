@@ -1,0 +1,45 @@
+
+.navbar .close,
+.panel-heading .close {
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	opacity: 1;
+	color:#fff;
+}
+
+.panel-heading h4 {
+	width: 88%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-transform: none !important;
+}
+.panel-body .list-group {
+	margin-bottom: 16px;
+}
+.panel-body .tab-content {
+    padding-top: 10px;
+}
+
+.label-default {
+    background-color: #ccc;
+}
+
+.list-group .row,
+.btn-default,
+.list-group {
+	background: #fff;
+	backface-visibility: hidden;
+}
+
+.bg-gray {
+	background-color: #ccc;
+}
+.badge.bg-gray {
+	background-color: #ccc;
+}
+
+/*.btn-group .btn {
+	border: none;
+}*/

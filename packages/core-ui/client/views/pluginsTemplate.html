@@ -1,0 +1,13 @@
+
+<template name="pluginsTemplate">
+{{#if templates}}
+	{{#each templates}}
+		{{{htmlComment pluginTemplate}}}
+		
+		{{> Template.dynamic template=pluginTemplate data=pluginData}}
+
+		{{{pluginSep}}}
+
+	{{/each}}
+{{/if}}
+</template>

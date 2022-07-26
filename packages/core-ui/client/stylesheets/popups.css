@@ -1,0 +1,73 @@
+
+.leaflet-popup-pane {
+	box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+.leaflet-popup-content-wrapper {
+	border-radius:8px;
+	border: none;
+	text-shadow:none;
+	color:#ddd;
+}
+.leaflet-popup-tip {
+	border: none;	
+	margin: -9px auto 0;
+}
+.leaflet-popup-tip-container {
+	margin-top: 0;
+}
+.leaflet-popup-content {
+	margin:4px;
+/*	overflow-x: hidden;*/
+}
+
+.leaflet-popup-content > div {
+	border-radius: 4px;	
+	color: #579ad4;
+	padding: 4px;
+	margin: 0;
+}
+.leaflet-popup-content .popup-geojson {
+	background: none
+}
+
+.leaflet-popup-content .popup-place {
+	background: none
+}
+.leaflet-popup-content .btn-block:first-child {
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+
+.popup-tit {
+	text-transform: capitalize;
+	border: none;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+
+.btn.disabled.popup-btn-star {/*patch*/
+	overflow: hidden;
+	opacity: 1;
+}
+
+.leaflet-popup-content .btn-block,
+.popup-user .btn-block:first-child {
+	text-align:left;
+	margin-bottom: 5px;
+}
+.popup-user .btn-block:first-child {
+	padding: 0;
+	margin-bottom: 0;	
+}
+
+.leaflet-popup-content .btn-block:last-child {
+	margin-bottom: 0
+}
+
+.leaflet-popup-content .btn {
+	border-color: #ccc;	
+	border: none;
+	margin-right: 2px
+}

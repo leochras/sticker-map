@@ -1,0 +1,99 @@
+
+<template name="panelPlace">
+
+<div id="place" class="panel">
+	<div class="panel-heading bg-primary">
+		<h4 class="pull-left">
+			<a class="back" href="{{routeBack}}">
+				<i class="icon icon-arrow-l"></i>
+			</a> 
+			{{#if name}} {{name}} {{else}}<i>{{i18n 'label_noname'}}</i>{{/if}}
+		</h4>
+		<a class="close pull-right" href="/map">
+			<i class="icon icon-close"></i>
+		</a>
+	</div>
+	<div class="panel-body">
+			 
+		{{> pluginsTemplate name='panelPlace'}}
+
+		<ul class="nav nav-tabs">
+			{{#if settings.templates.tabPlace_ui_info.show}}
+			<li class="active">
+				<a href="#tab_info" data-toggle="tab">
+					<i class="icon icon-info"></i> <span>{{i18n 'btn_info'}}</span>
+				</a>
+			</li>
+			{{/if}}
+			{{#if settings.templates.tabPlace_ui_hist.show}}
+			<li>
+				<a href="#tab_histplace" data-toggle="tab">
+					<i class="icon icon-hist"></i> <span>{{i18n 'btn_hist'}}</span>
+				</a>
+			</li>
+			{{/if}}
+			{{#if settings.templates.tabPlace_ui_nearby.show}}
+			<li>
+				<a href="#tab_nearbyplace" data-toggle="tab">
+					<i class="icon icon-places"></i> <span>{{i18n 'label_otherplaces'}}</span>
+				</a>
+			</li>
+			{{/if}}			
+		</ul>
+
+		<div class="tab-content">
+			{{#if settings.templates.tabPlace_ui_info.show}}
+			<div class="tab-pane active" id="tab_info">
+
+				{{> pluginsTemplate name='tabPlace'}}
+
+			</div>
+			{{/if}}
+			{{#if settings.templates.tabPlace_ui_hist.show}}
+			<div class="tab-pane" id="tab_histplace">
+			
+				{{> tabPlace_ui_hist}}
+
+			</div>	
+			{{/if}}
+			{{#if settings.templates.tabPlace_ui_nearby.show}}
+			<div class="tab-pane" id="tab_nearbyplace">
+			
+				{{> tabPlace_ui_nearby}}
+
+			</div>	
+			{{/if}}			
+		</div>
+	</div>	
+</div>
+
+</template>
+
+<template name="panelPlace_ui_btn_checkin">
+	<div class="pull-left">
+		{{> place_btn_checkin}}
+	</div>
+</template>
+
+<template name="panelPlace_ui_btns">
+	<div class="pull-right">
+		
+		{{> place_btns}}
+
+		<div class="btn-group">
+			{{#unless eq geometry.type 'Point' }}
+			<a class="btn btn-sm btn-default place-btn-geom" href="/place/{{id}}/geom" title="{{geometry.type}}">
+				<i class="icon icon-geometry"></i>
+			</a>
+			{{/unless}}
+			<a class="btn btn-sm btn-default place-btn-map pull-right" href="/place/{{id}}/map">
+				<i class="icon icon-map"></i>
+			</a>
+		</div>
+	</div>
+	<br /><br />
+</template>
+
+
+
+

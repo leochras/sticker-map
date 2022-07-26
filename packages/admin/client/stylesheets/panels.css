@@ -1,0 +1,52 @@
+
+.adminPage .panel .back,
+.adminPage .panel .close {
+	display: none;
+}
+
+.adminPage .panel h4 {
+	float: none !important;
+}
+
+.adminPage .panel {
+	position: relative;
+	border:none;
+}
+.adminPage .items-list {
+	max-height: 800px;
+	overflow-y: auto;
+}
+.adminPage .items-list .list-group-item {
+	cursor: pointer;
+}
+.adminPage .items-list .list-group-item.selected {
+	background-color: rgba(153,204,0,0.25);
+	box-shadow: none;
+}
+
+.adminPage .items-list .item-place {
+	width: auto;
+}
+
+.adminPage .panel .editdel {
+	display: none;
+}
+
+.minimap {
+	position:relative;
+	height:200px;
+	width:auto;
+}
+
+.adminMethods .list-group-item {
+	border:none;
+}
+
+#rawdata textarea {
+	width: 100%;
+	float: none;
+	font-family: monospace;
+	font-size: 11px;
+	overflow-x: auto;
+	white-space: nowrap;
+}

@@ -1,0 +1,25 @@
+
+#place .place-url {
+	max-width: 100px;
+	text-overflow: ellipsis;
+}
+
+#place .place-desc {
+	font-size: small;
+}
+
+#place .place-warn {
+	/*padding:4px 14px 4px 4px;*/
+	padding: 10px 22px 10px 10px;
+	position:relative;
+	border-color:#caa;
+	border-width:1px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	color:#b22;
+}
+
+#place .data-source {
+	color: #ccc;
+	font-size:10px;
+}

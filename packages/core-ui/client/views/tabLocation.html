@@ -1,0 +1,60 @@
+
+<template name="tabLocation">
+	<ul class="list-group">
+		<li class="list-group-item active">
+			<i class="icon icon-map"></i> 
+		{{#if isMe}}
+			{{i18n 'label_mylocation'}}
+		{{else}}
+			{{i18n 'label_location'}}
+		{{/if}}
+		</li>	
+		<li class="list-group-item">
+
+			{{> btns_location}}
+
+			{{> pluginsTemplate name='tabLocation'}}
+
+			{{#if getCheckin}}
+				{{#with placeById getCheckin}}
+				<div class="text-right">
+					{{> place_btns}}
+				</div>
+				{{/with}}
+			{{/if}}
+		</li>
+	</ul>
+</template>
+
+<template name="btns_location">
+{{#if getCheckin}}
+	
+	{{#if getCheckin}}
+	{{#with placeById getCheckin}}
+	
+		{{> item_place}} 
+	
+	{{/with}}
+	{{/if}}
+
+	{{#if isMe}}
+	
+		{{#if getCheckin}}
+		{{#with placeById getCheckin}}
+	
+			{{> place_btn_checkin}}
+	
+		{{/with}}
+		{{/if}}
+
+	{{/if}}
+{{else}}
+	{{#if getLoc}}
+
+		<a class="btn btn-sm btn-default" href="/user/{{id}}/map">
+			<i class="icon icon-map"></i>
+		</a>
+
+	{{/if}}
+{{/if}}
+</template>

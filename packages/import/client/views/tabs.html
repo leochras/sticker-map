@@ -1,0 +1,36 @@
+
+<template name="tabPlace_import">
+{{#if import.data}}
+{{#with import}}
+	<div class="list-group">
+		<div class="list-group-item active">
+			{{i18n 'label_importdata'}}
+		</div>	
+		<div class="list-group-item">
+			{{#with data}}
+
+				{{> popupImport}}
+			
+
+			{{/with}}
+		</div>
+		{{#if adminIsMe}}
+		<div class="list-group-item">
+			<label>{{i18n 'label_importname'}}</label> <a href="{{pathFor route='panelImportName' name=name}}">{{name}}</a>
+		</div>
+		{{/if}}
+	</div>
+{{/with}}
+{{/if}}
+</template>
+
+<template name="popupImport"> 
+   <div class="row">
+      <div class="col-sm-12">
+         {{#each arrayify this}}
+            <label>{{key}}</label> <span>{{val}}</span>
+            <br />
+         {{/each}}
+       </div>
+   </div>
+</template>

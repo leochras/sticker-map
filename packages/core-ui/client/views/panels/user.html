@@ -1,0 +1,197 @@
+
+<template name="panelUser">
+
+	<div id="user" class="panel">
+		<div class="panel-heading bg-primary">
+			<h4 class="pull-left">
+				<a class="back" href="{{routeBack}}">
+					<i class="icon icon-arrow-l"></i>
+				</a> 
+				{{getFullname}}
+			</h4>
+			<a class="close pull-right" href="/map">
+				<i class="icon icon-close"></i>
+			</a>
+		</div>
+		<div class="panel-body">
+		
+		{{#if or isBlocked isBlockMe}}
+		
+			<div class="row tab-user-bio">
+				<div class="col-xs-4 avatar-big">
+					{{> item_user_avatar}}
+				</div>
+				<div class="col-xs-8">			
+					{{#if username}}
+						<label>{{i18n 'label_username'}}</label>
+						<span>{{username}}</span>
+						<br />
+					{{/if}}
+				</div>
+			</div>
+
+			{{#if isBlocked}}
+			<ul class="list-group">		
+				<li class="list-group-item">
+					<i class="icon icon-report"></i> {{i18n 'label_userblocked'}}
+				</li>
+			</ul>
+			{{/if}}
+
+		{{else}}
+
+			{{> pluginsTemplate name='panelUser'}}
+
+			<ul class="nav nav-tabs">
+				{{#if settings.templates.tabUser_ui_info.show}}
+				<li class="active">
+					<a href="#tab_info" data-toggle="tab">
+						<i class="icon icon-info"></i> <span>{{i18n 'btn_info'}}</span>
+					</a>
+				</li>
+				{{/if}}
+				{{#if settings.templates.tabUser_ui_friends.show}}
+				<li class="">
+					<a href="#tab_friends" data-toggle="tab">
+						<i class="icon icon-users"></i> <span>{{i18n 'btn_friends'}}</span>
+					</a>
+				</li>
+				{{/if}}
+				{{#if settings.templates.tabUser_ui_hist.show}}
+				{{#if isFriend}}
+				<li class="">
+					<a href="#tab_histuser" data-toggle="tab">
+						<i class="icon icon-hist"></i> <span>{{i18n 'btn_hist'}}</span>
+					</a>
+				</li>
+				{{/if}}
+				{{/if}}
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane active" id="tab_info">
+			
+					{{> pluginsTemplate name='tabUser'}}
+
+				</div>
+				{{#if settings.templates.tabUser_ui_friends.show}}
+				<div class="tab-pane" id="tab_friends">
+					
+					{{> tabUser_ui_friends}}
+
+				</div>
+				{{/if}}
+				{{#if settings.templates.tabUser_ui_hist.show}}
+				{{#if isFriend}}
+				<div class="tab-pane" id="tab_histuser">
+					
+					{{> tabUser_ui_hist}}
+
+				</div>
+				{{/if}}
+				{{/if}}
+			</div>
+
+		{{/if}}
+		</div>		
+	</div>
+
+</template>
+
+<template name="panelUser_ui_photo">
+	<a class="btn user-btn-avatar" href="{{#if avatar}}{{avatar}}{{else}}/user/{{_id}}{{/if}}">
+		<img class="icon-avatar {{#unless avatar}}icon-avatar-default{{/unless}}" src="{{#if avatar}}{{avatar}}{{/if}}" />
+	</a>
+</template>
+
+<template name="panelUser_ui_bio">
+	<div class="row tab-user-bio">
+		<div class="col-xs-4 avatar-big">
+			{{> panelUser_ui_photo}}
+		</div>
+		<div class="col-xs-8">			
+		{{#if username}}
+			<label>{{i18n 'label_username'}}</label>
+			<span>{{username}}</span>
+			<br />
+		{{/if}}
+
+		{{#if name}}
+			<label>{{i18n 'label_name'}}</label>
+			<span>{{name}}</span>
+			<br />
+		{{/if}}
+
+		{{#if city}}
+			<label>{{i18n 'label_city'}}</label>
+			<span class="text-capitalize">{{city}}</span><br />
+		{{/if}}
+
+		{{#if lang}}
+			<label>{{i18n 'label_lang'}}</label>
+			{{lang}}
+			<br />
+		{{/if}}
+
+			<label>{{i18n 'label_signupdate'}}</label> 
+			<time>{{numericDate createdAt 0}}</time>			
+		</div>
+	</div>
+</template>
+
+<template name="panelUser_ui_status">
+	<div class="pull-left">
+		{{> user_status}} <time>{{humanTime loginAt 1}}</time>
+	</div>
+</template>
+
+<template name="panelUser_ui_btns">
+	<div class="pull-right">
+		<div class="user-btns">
+			{{> user_btns_panel}}
+		</div>
+	</div>
+	<br /><br />
+</template>
+
+<template name="panelUser_ui_tablocation">
+	{{#if or getLoc getCheckin}}
+		
+		{{> tabLocation}}
+
+	{{/if}}
+</template>
+
+<template name="user_btns_panel">
+	<div class="btn-group" data-toggle="buttons">
+
+	{{> pluginsTemplate name='itemUser'}}
+
+	{{#if isFriend}}
+		<a class="btn btn-sm btn-default user-btn-del" href="#" data-confirm-msg="{{i18n 'btn_frienddel'}}">
+			<i class="icon icon-userdel"></i>
+		</a>
+	{{else}}
+		{{#if isPending}}
+			<a class="btn btn-sm btn-default" href="#">
+				<i class="icon icon-userpend"></i> <span>{{i18n 'btn_friendpending'}}</span>
+			</a>
+		{{else}}
+			{{#if isReceive}}
+				<a class="btn btn-sm btn-warning user-btn-confirm" href="#">
+					<i class="icon icon-useradd"></i> <span>{{i18n 'btn_friendconfirm'}}</span>
+				</a>
+			{{else}}
+				<a class="btn btn-sm btn-default user-btn-add" href="#">
+					<i class="icon icon-useradd"></i> <span>{{i18n 'btn_friendadd'}}</span>
+				</a>
+			{{/if}}
+		{{/if}}
+	{{/if}}
+	{{#unless isAdmin}}
+		<a class="btn btn-sm btn-default user-btn-block" href="#" data-confirm-msg="{{i18n 'btn_userBlock'}}">
+			<i class="icon icon-report"></i>
+		</a>
+	{{/unless}}
+	</div>
+</template>

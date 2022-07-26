@@ -1,0 +1,83 @@
+
+#login-link-and-dropdown-list,
+#login-dropdown-list {
+	position: static;
+	background: none;
+	border: none;
+	overflow: hidden;
+	box-shadow: none;
+	border-radius: 0;
+	width: auto;
+	text-align: center;
+	list-style: none;
+}
+#login-buttons a {
+	text-decoration: none;
+}
+.login-link-and-dropdown-list a.login-link-text {
+	display: none;
+/*	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration:none;*/
+}
+#login-dropdown-list .login-close-text {
+	display: none;
+}
+
+#formlogin.no-accounts-creation .login-text-and-button {
+	display: none;
+}
+#formlogin.no-accounts-facebook #login-buttons-facebook {
+	display: none;
+}
+#formlogin.no-accounts-instagram #login-buttons-instagram {
+	display: none;
+}
+#formlogin.no-accounts-google #login-buttons-google {
+	display: none;
+}
+#formlogin.no-accounts-github #login-buttons-github {
+	display: none;
+}
+#formlogin.no-accounts-twitter #login-buttons-twitter {
+	display: none;
+}
+#formlogin.no-accounts-openstreetmap #login-buttons-openstreetmap {
+	display: none;
+}
+#login-dropdown-list .or {
+	display: none;
+}
+
+/*
+#login-dropdown-list .dropdown-menu {
+	margin: 0 10px;
+	border-radius: 8px;	
+	box-shadow: none;
+	width: auto;
+	max-width: auto;
+	background: rgba(255, 255, 255, 0.6);	
+}
+
+
+#login-dropdown-list .dropdown-toggle,
+#login-dropdown-list .dropdown-menu {
+	position: static;
+	left: auto;
+	right: auto;
+	clear: both;
+	float: none;
+	display: block;
+	height: auto;
+	overflow: hidden;
+}
+
+#login-dropdown-list .dropdown-toggle {
+	display: none;
+}
+.login-button.btn.btn-block.btn-GitHub {
+	background-color: #444;
+	color: #fff;
+}
+*/

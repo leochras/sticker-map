@@ -1,0 +1,24 @@
+
+#page404,
+#pageLoading {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;	
+	background: #fff;
+	text-shadow:none;
+	text-align: center;
+	color: #f80;	
+}
+/* PAGES */
+.container section,
+.container-fluid section {
+	margin-top: 40px;
+}
+footer {
+	padding: 20px;
+}
+hr {
+	clear: both;
+}
+

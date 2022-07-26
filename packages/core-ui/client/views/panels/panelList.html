@@ -1,0 +1,45 @@
+
+<template name="panelList">
+	<div id="panelList" class="panel {{className}}">
+		<div class="panel-heading bg-primary">
+			<h4 class="pull-left">
+				<a class="back" href="{{routeBack}}">
+					<i class="icon icon-arrow-l"></i>
+				</a> 
+				{{{title}}}
+			</h4>
+			<a class="close pull-right" href="/map">
+				<i class="icon icon-close"></i>
+			</a>
+		</div>
+		<div class="panel-body">
+
+		{{#if headerTemplate}}
+		<div class="list-header">
+			{{> Template.dynamic template=headerTemplate data=headerData}}
+		</div>
+		{{/if}}
+		
+		<div class="list-items list-group {{#if grid}}list-items-grid{{/if}}">
+			{{#if list.length}}	
+				{{#each list}}
+					<div class="list-group-item">
+					{{> Template.dynamic template=this.template}}
+					</div>
+				{{/each}}
+			{{else}}
+				<!--div class="list-group-item text-gray text-center">
+					{{i18n 'label_nolistitems'}}
+				</div-->
+			{{/if}}
+		</div>
+
+		{{#if footerTemplate}}
+		<div class="list-footer">
+			{{> Template.dynamic template=footerTemplate data=footerData}}
+		</div>
+		{{/if}}
+
+		</div>
+	</div>
+</template>

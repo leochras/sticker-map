@@ -1,0 +1,38 @@
+
+.viewer-backdrop {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.marker-photo {
+	box-shadow: 0 0 10px rgba(0,0,0,1);
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: -35px;
+	left: -35px;
+	border-radius:3px;
+	border: 2px solid white;  
+}
+
+.place-photo {
+	width: 100%;
+	margin: 0;
+	cursor: pointer;
+}
+
+.panel.photos .list-items.list-items-grid .place-btn-name {
+	margin: 0;
+	
+	line-height: 12px;
+	padding:0;
+}
+
+.btn-photodel {
+	position: absolute;
+	top: 5px;
+	right: 0;
+}
+
+#place .place-photo {
+	margin: 20px 0;
+}

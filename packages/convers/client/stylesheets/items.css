@@ -1,0 +1,81 @@
+
+.conver-item {
+	height: auto;
+	overflow: hidden;
+}
+.btn-group-justified .btn.conver-title {
+	width: 60%;
+	text-align:left;
+	display: inline-block;
+	white-space: nowrap;
+	overflow-x:hidden;
+	text-overflow: ellipsis;
+	font-weight: bold;
+	padding: 0;
+	font-size: 14px;
+	text-transform: capitalize;
+}
+.conver-target {
+	margin-left: 5px; 
+}
+.conver-target a,
+.conver-users a {
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: normal;
+}
+
+.marker-place .badge-convers,
+.marker-cluster .badge-convers {
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	z-index: 1000;
+	background-color: #8BCEDF;
+}
+
+.conver-item .icon-avatar {
+	height: 18px;
+	width: 18px;
+	background-size: 18px;
+}
+
+.conver-item .user-btn-name:after {
+	content: ",";
+}
+.conver-item .user-btn-name:last-child:after {
+    content: "";
+}
+
+.conver-target .item-place {
+	display: inline;
+}
+
+.conver-btn-del {
+	display: none;
+}
+
+.messages .conver-btn-del {
+	display: inline-block;
+}
+
+.msg-item .user-btn-name {
+	line-height: 12px;
+	height: 12px;
+	vertical-align: top;
+	font-size: 14px;
+	font-weight: bold;
+}
+.msg-item .user-btn-avatar {
+	float: left;
+}
+.msg-item .msg-body {
+	vertical-align: top;
+	font-size: 12px;
+	line-height: 12px;
+	padding-left: 4px;
+	max-width: 80%;
+}
+.msg-item time {
+	float: right;
+}

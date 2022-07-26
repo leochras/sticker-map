@@ -1,0 +1,59 @@
+
+<template name="popupPlace">
+	<div class="popup-place">
+		<a href="/place/{{id}}" class="btn btn-block btn-default popup-tit">
+			{{#if name}}<b>{{name}}</b>{{else}}<i>{{i18n 'label_noname'}}</i>{{/if}}
+		</a>
+
+		{{> pluginsTemplate name='popupPlace'}}
+
+	</div>
+</template>
+
+<template name="tooltipPlace">
+	<div class="tooltip-place">
+		<a class="btn btn-block btn-default popup-tit">
+			{{#if name}}<b>{{name}}</b>{{else}}<i>{{i18n 'label_noname'}}</i>{{/if}}
+		</a>
+	</div>
+</template>
+
+<template name="popupUser">
+	<div class="popup-user">
+		<span class="btn btn-block btn-default popup-tit">
+			{{> item_user}}
+		</span>
+
+	{{> pluginsTemplate name='popupUser'}}
+	</div>
+</template>
+
+<template name="popupCursor">
+	<div class="popup-cursor">
+		{{> pluginsTemplate name='popupCursor'}}
+	</div>
+</template>
+
+<template name="popupCursor_ui_loc">
+	<a class="btn btn-sm btn-default btn-block" href="{{absoluteUrl 'map/'}}{{humanLoc loc}}">
+		{{humanLoc loc 6}}
+	</a>
+</template>
+
+<template name="popupPlace_ui_checkins">
+	{{#if checkinsCount}}
+		<a class="btn btn-sm btn-default" href="/place/{{id}}/checkins">
+			<i class="icon icon-users"></i>
+		</a>
+	{{/if}}
+</template>
+
+<template name="popupPlace_ui_geometry">
+	{{#if geometry}}
+	{{#unless eq geometry.type 'Point' }}
+	<a class="btn btn-sm btn-default" href="/place/{{id}}/geom" title="{{geometry.type}}">
+		<i class="icon icon-geometry"></i>
+	</a>
+	{{/unless}}
+	{{/if}}
+</template>

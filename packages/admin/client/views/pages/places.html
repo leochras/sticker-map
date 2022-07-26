@@ -1,0 +1,88 @@
+
+<template name="pageAdminPlaces">
+	<section id="adminPlaces" class="adminPage">
+		<br />
+		<div class="row">
+			<div class="col-sm-3">
+				<input class="items-search form-control" type="text" placeholder="{{i18n 'label_find'}}" /> 
+				<span class="search-canc form-control-feedback" aria-hidden="true"><i class="icon icon-canc"></i></span>
+			</div>			
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-5">
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-sm-7">
+				<div class="list-group items-list">
+					{{#if items.length}}
+						{{#each items}}
+							
+							{{> itemPlaceAdmin}}
+
+						{{/each}}
+					{{else}}
+						<!--div class="list-group-item text-gray text-center">
+							{{i18n 'label_nolistitems'}}
+						</div-->
+					{{/if}}
+				</div>
+			</div>
+			<div class="col-sm-5">
+				{{#with itemSelected}}
+				
+					<div class="panel pageAdmin">
+						<div class="panel-heading bg-primary">
+							<h4 class="text-left">
+								<a href="/place/{{id}}">{{i18n 'title_adminPlace' name}}</a>
+							</h4>
+							<a class="close pull-right" href="{{routeBack}}">
+								<i class="icon icon-close"></i>
+							</a>
+						</div>
+						<div class="panel-body">
+
+							{{> pluginsTemplate name='pageAdminPlace' sep='<hr />'}}
+							
+
+						</div>
+					</div>
+					
+				{{/with}}
+			</div>
+		</div>
+	</section>
+</template>
+
+<template name="itemPlaceAdmin">
+	<a href="/admin/places/{{id}}" class="list-group-item {{#if routeParamIs 'id' id}}selected{{/if}}">
+		<span class="pull-left">
+			{{> item_place}}
+		</span>
+		<span class="pull-right">
+			{{> pluginsTemplate name='itemPlaceAdmin'}}
+		</span>
+	</a>
+</template>
+
+<template name="itemPlaceAdmin_admin_btns">
+	<a class="btn btn-sm btn-default item-btn-del" href="#" data-confirm-msg="{{i18n 'btn_del'}}">
+		<i class="icon icon-del"></i>
+	</a>
+</template>
+
+
+<template name="pageAdminPlace_admin_owner">
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<label>{{i18n 'label_owner'}}: </label>
+			{{#with getOwner}}
+				{{> item_user}}
+				<input class="form-control input-owner" type="text" aria-describedby="user-addon" placeholder="{{i18n 'label_username'}}" value="{{username}}" />
+			{{/with}}
+		</div>
+	</div>
+	
+</template>

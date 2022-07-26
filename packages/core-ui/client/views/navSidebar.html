@@ -1,0 +1,58 @@
+
+<template name="navSidebar">
+	<ul class="nav nav-pills" role="tablist">
+		{{> pluginsTemplate name='navSidebar'}}
+	</ul>
+</template>
+
+<template name="navSidebar_ui_profile">
+	<li class="{{routeIs 'profile' 'active'}}">
+	{{#if currentUser}}
+		{{#with currentUser}}
+		<a class="btn btn-sm btn-avatar" href="{{pathFor route='profile'}}" title="{{i18n 'btn_profile'}} {{username}}" role="tab">
+			<img class="icon-avatar {{#unless avatar}}icon-avatar-default{{/unless}}" src="{{#if avatar}}{{avatar}}{{/if}}" />
+			<span>{{username}}</span>
+		</a>
+		{{/with}}
+	{{else}}
+		<a class="btn btn-sm" href="{{pathFor route='pageHome'}}" role="tab">
+			<i class="icon icon-website"></i>
+			<!-- <span>{{i18n 'btn_home'}}</span> -->
+		</a>
+	{{/if}}
+	</li>
+</template>
+
+<template name="navSidebar_ui_users">
+	<li class="{{routeIs 'users|friends|usersNews' 'active'}}">
+		<a class="btn btn-sm" href="{{pathFor route='users'}}" role="tab">
+			<i class="icon icon-users"></i>
+			<span>{{i18n 'btn_users'}}</span>
+		</a>
+	</li>
+</template>
+
+<template name="navSidebar_ui_places">
+	<li class="{{routeIs 'placesNews|placesNearby' 'active'}}">
+		<a class="btn btn-sm" href="{{pathFor route='placesNews'}}" role="tab">
+			<i class="icon icon-places"></i>
+			<span>{{i18n 'btn_places'}}</span>
+		</a>
+	</li>
+</template>
+
+<template name="navSidebar_ui_connect">
+	{{#unless eq connectionStatus.status 'connected'}}
+	
+		{{> btnConnect}}
+	
+	{{/unless}}
+</template>
+<!-- TODO template name="navSidebar_ui_search">
+	<li class="{{routeIs 'search' 'active'}} pull-right">
+		<a class="btn btn-sm" href="{{pathFor route='search'}}" role="tab">
+			<i class="icon icon-search"></i>
+			<span> {{i18n 'btn_search'}}</span>
+		</a>
+	</li>
+</template -->

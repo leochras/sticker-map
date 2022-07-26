@@ -1,0 +1,31 @@
+
+<template name="formLogin">
+
+	{{#if currentUser}}
+		{{#with currentUser}}
+
+			<a class="btn btn-default" href="{{pathFor route=settings.router.enterRoute}}">
+				<span class=" user-btn-name">
+					<img class="icon-avatar {{#unless avatar}}icon-avatar-default{{/unless}}" src="{{#if avatar}}{{avatar}}{{/if}}" />
+					<u>{{i18n 'btn_enter'}}</u>
+				</span>
+			</a>
+
+			<br />
+			
+			<div class="btn btn-link">
+				<a class="btn btn-link" href="{{pathFor route='logout'}}">{{i18n 'btn_logout'}}</a>
+			</div>
+		
+		{{/with}}
+	{{else}}
+		<div class="row">
+			<div id="formlogin" class="col-sm-6 col-sm-offset-3 {{classnames}}">
+
+				{{> loginButtons}}
+			
+			</div>
+		</div>
+	{{/if}}
+
+</template>

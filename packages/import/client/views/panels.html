@@ -1,0 +1,48 @@
+
+<template name="panelAdmin_import">
+	<a class="list-group-item" href="/admin/import">
+		<i class="icon icon-add"></i>
+		{{i18n 'label_import'}}
+	</a>
+</template>
+
+<template name="panelImport">
+
+	{{> pluginsTemplate name='panelImport'}}
+
+	<div class="text-right">
+		<label>{{currentUser.imports.length}} {{i18n 'label_imports'}}</label>
+	</div>
+</template>
+
+<template name="panelImport_file">
+	<div class="row">
+		<div class="col-sm-3 col-xs-4">
+			<label>{{i18n 'label_importname'}}</label>
+		</div>
+		<div class="col-sm-9 col-xs-8">
+			<input type="text" class="form-control import-name" value="{{importGetParams.importname}}">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3 col-xs-4">
+			<label>{{i18n 'label_importfile'}}</label>
+		</div>
+		<div class="col-sm-9 col-xs-8">
+			{{> inputFile_upload target='import_places' onSelect=importOnSelect onUploaded=importOnUploaded params=importGetParams}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3 col-xs-4">
+			<a class="btn btn-default import-preview">
+				<i class="icon icon-map"></i> 
+				{{i18n 'btn_importpreview'}}
+			</a>
+		</div>
+		<div class="col-sm-9 col-xs-8">
+			{{#if importCount}}
+			<label>{{i18n 'label_importpreview'}} {{importCount}}</label>			
+			{{/if}}
+		</div>
+	</div>
+</template>

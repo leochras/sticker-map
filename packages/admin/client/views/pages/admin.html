@@ -1,0 +1,27 @@
+
+<template name="pageAdmin_admin_raw">
+	<div class="row">
+		<div class="col-xs-12">
+			{{#with rawdata}}
+				<a class="btn btn-default" type="button" data-toggle="collapse" data-target="#rawdata" aria-expanded="false">
+				  <i class="icon icon-code"></i> {{i18n 'label_rawdata'}}
+				</a>
+				<a class="btn btn-default btn-edit hidden disabled" type="button" data-toggle="collapse">
+				  <i class="icon icon-edit"></i> {{i18n 'btn_save'}}
+				</a>
+				<div id="rawdata" class="collapse collapsed">
+					<textarea class="text-data" rows="20" cols="10">{{{this}}}</textarea>
+				</div>
+			{{/with}}
+		</div>
+	</div>
+</template>
+
+<template name="pageAdmin_admin_map">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="minimap">
+			</div>	
+		</div>
+	</div>
+</template>

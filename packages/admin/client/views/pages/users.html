@@ -1,0 +1,191 @@
+
+<template name="pageAdminUsers">
+	<section id="adminUsers" class="adminPage">
+		<br />
+		<div class="row">
+			<div class="col-sm-3">
+				<input class="items-search form-control" type="text" placeholder="{{i18n 'label_find'}}" /> 
+				<span class="search-canc form-control-feedback" aria-hidden="true"><i class="icon icon-canc"></i></span>
+			</div>
+			<div class="col-sm-3">
+				<form class="form-horizontal item_user-new" role="form">
+					<div class="input-group">
+						<input class="form-control user-name-new" tyte="text" maxlength="60" placeholder="{{i18n 'label_username'}}" aria-label="{{i18n 'label_username'}}" aria-expanded="true" />
+						<span class="input-group-btn">
+							<a class="btn btn-default user-btn-new">
+								<i class="icon icon-add"></i> {{i18n 'btn_addnew'}}
+							</a>
+						</span>
+					</div>
+					<br />
+				</form>
+			</div>
+			<div class="col-sm-6">
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="list-group items-list">
+					{{#if items.length}}
+						{{#each items}}
+							
+							{{> itemUserAdmin}}
+
+						{{/each}}
+					{{else}}
+						<!--div class="list-group-item text-gray text-center">
+							{{i18n 'label_nolistitems'}}
+						</div-->
+					{{/if}}
+				</div>
+			</div>
+			<div class="col-sm-6">
+				{{#if itemSelected}}
+				{{#with itemSelected}}
+				
+					<div class="panel pageAdmin">
+						<div class="panel-heading bg-primary">
+							<h4 class="text-left">
+								{{i18n 'title_adminUser' name}}
+							</h4>
+							<a class="close pull-right" href="{{routeBack}}">
+								<i class="icon icon-close"></i>
+							</a>
+						</div>
+						<div class="panel-body">
+
+							{{> pluginsTemplate name='pageAdminUser' sep='<hr />'}}
+
+						</div>
+					</div>
+					
+				{{/with}}
+				{{/if}}
+			</div>
+		</div>
+	</section>
+</template>
+
+<template name="itemUserAdmin">
+	<a href="/admin/users/{{id}}" class="list-group-item {{#if routeParamIs 'id' id}}selected{{/if}}">
+		<span class="pull-left">
+			{{> item_user}} 
+		</span>
+		<span class="pull-right">
+			{{> pluginsTemplate name='itemUserAdmin'}}
+		</span>
+	</a>
+</template>
+
+<template name="itemUserAdmin_admin_btns">
+	<a class="btn btn-sm btn-default item-btn-del" href="#" data-confirm-msg="{{i18n 'btn_del'}}">
+		<i class="icon icon-del"></i> {{i18n 'btn_del'}}
+	</a>
+</template>
+
+<template name="pageAdminUser_admin_logins">
+{{#with rawdata}}
+	<div class="list-group">
+		{{#if loginAt}}
+		<label>{{i18n 'label_logindate'}}</label> {{numericDate loginAt 1}}
+		{{/if}}
+		{{#if loginIp}}
+		<label>{{i18n 'label_ip'}}</label> <code>{{loginIp}}</code>
+		{{/if}}
+	</div>
+	
+	{{#if services.resume.loginTokens.length}}
+		<div class="pull-right">
+			<a class="btn btn-sm btn-default item-btn-logout" href="#" data-confirm-msg="{{i18n 'btn_logout'}}">
+				<i class="icon icon-logout"></i> {{i18n 'btn_logout'}}
+			</a>
+		</div>
+		<br />
+		<label>{{i18n 'label_logins'}}</label>
+		<div class="list-group">
+		{{#each services.resume.loginTokens}}
+			<div class="list-group-item">
+				<span>{{numericDate when 1}}</span>
+			</div>
+		{{/each}}
+		</div>
+	{{/if}}
+{{/with}}
+</template>
+
+<template name="pageAdminUser_admin_contact">
+{{#with rawdata}}
+	{{#if emails.length}}
+		<label>{{i18n 'label_email'}}</label>
+		{{#each emails}}
+			<div class="btn-group">
+				<a class="btn btn-default" href="mailto:{{address}}">
+					<i class="icon icon-mail"></i> 
+					{{address}}
+					&nbsp;
+					{{#if verified}}
+						<span class="text-green">
+						<i class="icon icon-success"></i> 
+						{{i18n 'btn_verified'}}
+						</span>
+					{{else}}
+						<span class="text-danger">
+						<i class="icon icon-warning"></i> 
+						{{i18n 'btn_notverified'}}
+						</span>
+					{{/if}}						
+				</a>
+			</div>
+		{{/each}}
+	{{/if}}
+
+	{{#with source}}
+		{{#if service}}
+		<div class="btn-group">
+			{{#if eq service 'keplerjs'}}
+				<a class="btn btn-default" target="_blank" href="/user/{{_id}}">
+					<i class="icon icon-kepler"></i> {{options.profile.name}}
+				</a>
+			{{/if}}
+			{{#if eq service 'openstreetmap'}}
+				<a class="btn btn-default" target="_blank" href="{{url}}">
+					<i class="icon icon-osm"></i> {{options.profile.name}}
+				</a>
+			{{/if}}
+			{{#if eq service 'facebook'}}
+				<a class="btn btn-default" target="_blank" href="{{url}}">
+					<i class="icon icon-fb"></i> {{options.profile.name}}
+				</a>
+			{{/if}}	
+			{{#if eq service 'github'}}
+				<a class="btn btn-default" target="_blank" href="{{url}}">
+					<i class="icon icon-git"></i> {{options.profile.name}}
+				</a>
+			{{/if}}					
+			{{#if eq service 'google'}}
+				<a class="btn btn-default" target="_blank" href="{{url}}">
+					<i class="icon icon-goo"></i> {{options.profile.name}}
+				</a>
+			{{/if}}
+		</div>
+		{{/if}}
+	{{/with}}
+{{/with}}
+</template>
+
+<template name="pageAdminUser_admin_friends">
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<label>{{i18n 'btn_addfriends'}}: </label>
+			<span class="input-group">
+				<span class="input-group-addon">
+					<i class="icon icon-useradd"></i>
+				</span>
+				<input class="form-control input-friends" type="text" placeholder="{{i18n 'btn_addfriends'}}" value="" />
+			</span>
+		</div>
+	</div>
+	
+</template>

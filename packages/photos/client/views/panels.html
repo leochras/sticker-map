@@ -1,0 +1,58 @@
+
+<template name="panelProfile_photos">
+	<a class="list-group-item" href="/photos/edits">
+		<i class="icon icon-photos"></i>
+		 {{i18n 'title_editphotos'}} 
+		<span class="badge">{{photos.length}}</span>
+	</a>
+</template>
+
+<template name="formPhotoNew">
+	<div class="form-group">
+		<div class="col-xs-6">
+			<label class="control-label"><i class="icon icon-photos"></i> {{i18n 'label_photoplacenew'}}</label>
+		</div>
+		<div class="col-xs-6">
+			{{> inputFile_upload target='photos_places' onUploaded=uploadDone}}
+		</div>
+	</div>
+</template>
+
+<template name="panelPlace_photos">
+{{#if photo}}
+	<figure class="clearfix">
+		<img class="place-photo img-responsive img-rounded" src="{{photourl}}" itemprop="thumbnail" alt="{{name}}" />
+	</figure>
+{{/if}}
+</template>
+
+<template name="panelPlaceEdit_photos">
+	<div class="form-group">
+		<label class="control-label"><i class="icon icon-photos"></i> {{i18n 'label_addphotos'}}</label>
+		<div class="clearfix">
+	
+			{{> inputFile_upload target='photos_places' params=this.id onUploaded=photoUploaded}}
+			
+			<div class="clearfix" style="position: relative;">
+				{{#if photo}}
+					{{> panelPlace_photos}}
+				{{/if}}
+				<a class="btn-photodel btn btn-default {{#unless photo}}hidden{{/unless}}" href="#" data-confirm-msg="{{i18n 'btn_del'}}">
+					<i class="icon icon-del"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="panelSettings_photos">
+	<div class="form-group">
+		<div class="col-sm-3 col-xs-4 text-right avatar-big">
+			{{> item_user_avatar}}
+		</div>
+		<div class="col-sm-9 col-xs-8">
+			<label>{{i18n 'btn_avatar'}}</label>
+			{{> inputFile_upload target='photos_avatars'}}
+		</div>
+	</div>	
+</template>

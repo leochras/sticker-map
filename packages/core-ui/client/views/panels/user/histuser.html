@@ -1,0 +1,17 @@
+
+<template name="tabUser_ui_hist">
+	{{#if hist.length}}
+		<label>{{i18n 'label_histuser'}}</label>
+		<ul class="list-group list-items">
+			{{#each hist}}
+			<li class="list-group-item">
+				{{#with placeById this}}
+					{{> item_place}}
+				{{/with}}
+			</li>
+			{{/each}}
+		</ul>
+	{{else}}
+		<label class="text-gray"><i>{{i18n 'label_notfound'}}</i></label>
+	{{/if}}
+</template>

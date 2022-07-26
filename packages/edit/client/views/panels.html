@@ -1,0 +1,67 @@
+
+<template name="panelProfile_edit">
+	<a class="list-group-item" href="{{pathFor route='panelPlacesEdit'}}">
+		<i class="icon icon-edit"></i>
+		 {{i18n 'label_editplaces'}} 
+		<span class="badge">{{places.length}}</span>
+	</a>
+</template>
+
+<template name="panelEdits_edit_map">
+	<a class="btn btn-default pull-right" href="{{pathFor route='mapPlacesEdit'}}">
+		<i class="icon icon-places"></i>
+		 {{i18n 'btn_placesmap'}} 
+	</a>
+</template>
+
+<template name="panelPlace_edit">
+{{#if or createdAt userId}}
+	<div class="row">
+		<div class="col-sm-12">
+
+			<br />
+			{{> panelPlaceEdit_edit_creation}}
+
+			{{#if isEditable}}
+			<div class="btn-group pull-right" role="group">
+				<a class="btn btn-edit btn-default" href="{{pathFor route='panelPlaceEdit' placeId=id}}">
+					<i class="icon icon-edit"></i> {{i18n 'btn_edit'}}
+				</a>
+			</div>
+			{{/if}}
+		</div>
+	</div>
+{{/if}}
+</template>
+
+<template name="tabUser_edit">
+{{#if places.length}}
+	<ul class="list-group">
+		<li class="list-group-item active">		
+			<span>{{i18n 'label_editplaces'}}</span>
+		</li>
+
+		{{#if places.length}}
+
+			{{#if placesList}}
+				{{#each getPlacesList}}
+				<li class="list-group-item">
+					{{#with placeById this}}
+						{{> item_place_search}}
+					{{/with}}
+				</li>
+				{{/each}}
+			{{else}}
+				<a class="list-group-item panel-btn-placesList" href="#">
+					<i class="icon icon-edit"></i> {{i18n 'label_editplaces'}}
+				</a>
+			{{/if}}
+
+		{{else}}
+			<li class="list-group-item">
+				<label class="text-gray"><i>{{i18n 'label_notfound'}}</i></label>
+			</li>
+		{{/if}}
+	</ul>
+{{/if}}	
+</template>

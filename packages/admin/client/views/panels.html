@@ -1,0 +1,24 @@
+
+<template name="panelProfile_admin">
+	<a class="list-group-item" href="/admin">
+		<i class="icon icon-admin"></i>
+		 {{i18n 'title_admin'}}
+	</a>
+</template>
+
+<template name="panelUser_admin">
+	<div class="clearfix">
+		<a class="btn btn-sm btn-default pull-right" href="/admin/users/{{id}}" title="{{i18n 'title_admin'}}">
+			<i class="icon icon-admin"></i> <span>{{i18n 'title_admin'}}</span>
+		</a>
+	</div>
+</template>
+
+<template name="panelPlace_admin">
+	<div class="clearfix">
+		<a class="btn btn-sm btn-default pull-right" href="/admin/places/{{id}}" title="{{i18n 'title_admin'}}">
+			<i class="icon icon-admin"></i> <span>{{i18n 'title_admin'}}</span>
+		</a>
+	</div>
+</template>
+
